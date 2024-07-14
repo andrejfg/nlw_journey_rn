@@ -9,12 +9,8 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint --cache 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint:fix": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "bun run lint:fix"
