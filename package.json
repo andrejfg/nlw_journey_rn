@@ -10,7 +10,11 @@
     "test": "jest --watchAll",
     "lint": "eslint --cache 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "husky init"
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "bun run lint:fix"
