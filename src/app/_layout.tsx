@@ -1,31 +1,35 @@
-import "@/styles/global.css"
+import '@/styles/global.css'
 
-import { Slot } from "expo-router"
-import { StatusBar, View } from "react-native"
+import { Slot } from 'expo-router'
+import { StatusBar, View } from 'react-native'
 
 import {
   useFonts,
   Inter_400Regular,
   Inter_500Medium,
-  Inter_600SemiBold
-} from "@expo-google-fonts/inter"
-import { Loading } from "@/components/loading"
+  Inter_600SemiBold,
+} from '@expo-google-fonts/inter'
+import { Loading } from '@/components/loading'
 
 export default function RootLayout() {
-  const [fontsLoaded]=useFonts({
+  const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
-    Inter_600SemiBold
+    Inter_600SemiBold,
   })
 
-  if(!fontsLoaded){
+  if (!fontsLoaded) {
     return <Loading />
   }
 
   return (
     <View className="flex-1 bg-zinc-950">
-      <StatusBar barStyle={"light-content"} backgroundColor={"transparent"} translucent />
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'transparent'}
+        translucent
+      />
       <Slot />
     </View>
-)
+  )
 }

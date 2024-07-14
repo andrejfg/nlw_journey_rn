@@ -10,7 +10,7 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ['./src/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: { jsx: true },
@@ -67,4 +67,7 @@ export default [
       },
     },
   },
+  {
+    ignores: ["*.config.js"]
+}
 ]
